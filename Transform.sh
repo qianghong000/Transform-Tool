@@ -132,7 +132,7 @@ Transform(){
 	file_dir=$DPATH/$name.mp4
 	ffmpeg -i $DIR/$filename -y -vcodec copy -acodec copy $file_dir && ffmpeg -i $file_dir -y -r 1 -ss 1 -t 0.001 -s 90x160 -f image2 $DPATH/$name.jpeg
 	Alter
-  elif [ ${filename##*.} == "MOV" ] || [ ${filename##*.} == "MOV" ]; then
+  elif [ ${filename##*.} == "MOV" ] || [ ${filename##*.} == "mov" ]; then
 	file_dir=$DPATH/$name.mp4
 	ffmpeg -i $DIR/$filename -vcodec libx264 -strict experimental $file_dir && ffmpeg -i $file_dir -y -r 1 -ss 1 -t 0.001 -s 90x160 -f image2 $DPATH/$name.jpeg
 	Alter
